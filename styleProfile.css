@@ -280,13 +280,12 @@
   font-weight: 900;
   font-size: 20px;
 }
-#pressedbtn{
+ul li a.active {
   background-color: gainsboro;
   border-radius: 25px;
   padding: 15px;
   color: #0A2B19;
 }
-
 
 
 

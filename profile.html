@@ -26,9 +26,9 @@
     <section class="pre">
       <div class="navv">
         <ul>
-          <li><a href="#" id="btnprofile">Profile</a></li>
-          <li><a href="#" id="btntrajets">Mes trajets</a></li>
-          <li><a href="#" id="btnpreferences">Mes préferences</a></li>
+          <li><a href="#monprofile" id="btnprofile">Profile</a></li>
+          <li><a href="#mestrajets" id="btntrajets">Mes trajets</a></li>
+          <li><a href="#mespréferences" id="btnpreferences">Mes préferences</a></li>
         </ul>
       </div>
     </section>
@@ -159,7 +159,7 @@
   </div>
 </body>
 <script>
-  // Sélectionne les boutons
+ // Sélectionne les boutons
 const btnSection1 = document.getElementById('btnprofile');
 const btnSection2 = document.getElementById('btntrajets');
 const btnSection3 = document.getElementById('btnpreferences');
@@ -174,28 +174,37 @@ function afficherSection1() {
   section1.style.display = 'block';
   section2.style.display = 'none';
   section3.style.display = 'none';
+  btnSection1.classList.add('active');
+  btnSection2.classList.remove('active');
+  btnSection3.classList.remove('active');
 }
-
 
 function afficherSection2() {
   section1.style.display = 'none';
   section2.style.display = 'flex';
   section3.style.display = 'none';
+  btnSection1.classList.remove('active');
+  btnSection2.classList.add('active');
+  btnSection3.classList.remove('active');
 }
 
 function afficherSection3() {
   section1.style.display = 'none';
   section2.style.display = 'none';
   section3.style.display = 'block';
+  btnSection1.classList.remove('active');
+  btnSection2.classList.remove('active');
+  btnSection3.classList.add('active');
 }
 
-section2.style.display = 'none';
-section3.style.display = 'none';
+// Affiche la section Profile par défaut
+afficherSection1();
 
 // Associe les fonctions aux événements de clic sur les boutons
 btnSection1.addEventListener('click', afficherSection1);
 btnSection2.addEventListener('click', afficherSection2);
 btnSection3.addEventListener('click', afficherSection3);
+
 </script>
 
 </html>
